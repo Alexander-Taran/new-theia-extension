@@ -1,0 +1,11 @@
+{
+  "lerna": "/* @eval lernaVersion */",
+  "version": "/* @eval version */",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "command": {
+    "run": {
+      "stream": true
+    }
+  }
+}

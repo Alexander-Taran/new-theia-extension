@@ -1,0 +1,33 @@
+{
+    "private": true,
+    "name": "browser-app",
+    "version": "/* @eval version */",
+    "dependencies": {
+        "@theia/core": "/* @eval theiaVersion */",
+        "@theia/editor": "/* @eval theiaVersion */",
+        "@theia/filesystem": "/* @eval theiaVersion */",
+        "@theia/markers": "/* @eval theiaVersion */",
+        "@theia/messages": "/* @eval theiaVersion */",
+        "@theia/monaco": "/* @eval theiaVersion */",
+        "@theia/navigator": "/* @eval theiaVersion */",
+        "@theia/preferences": "/* @eval theiaVersion */",
+        "@theia/process": "/* @eval theiaVersion */",
+        "@theia/terminal": "/* @eval theiaVersion */",
+        "@theia/workspace": "/* @eval theiaVersion */",
+        "/* @eval name */": "/* @eval version */"
+    },
+    "devDependencies": {
+        "@theia/cli": "/* @eval theiaVersion */",
+        // @if tree-editor
+        "node-polyfill-webpack-plugin": "latest",
+        // @endif
+    },
+    "scripts": {
+        "prepare": "theia build --mode development",
+        "start": "theia start",
+        "watch": "theia build --watch --mode development"
+    },
+    "theia": {
+        "target": "browser"
+    }
+}

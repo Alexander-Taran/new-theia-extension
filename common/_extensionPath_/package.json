@@ -1,0 +1,69 @@
+{
+    "name": "/* @eval name */",
+    "keywords": [
+      "theia-extension"
+    ],
+    "version": "/* @eval version */",
+    // @if description
+    "description": "/* @eval description */",
+    // @endif
+    // @if author
+    "author": "/* @eval author */",
+    // @endif 
+    // @if license
+    "license": "/* @eval license */",
+    // @endif
+    // @if githubUrl
+    "repository": {
+      "type": "git",
+      "url": "/* @eval githubUrl */"
+    },
+    "bugs": {
+      "url": "/* @eval githubUrl *//issues"
+    },
+    "homepage": "/* @eval githubUrl */",
+    // @endif
+    "files": [
+      "lib",
+      "src"
+    ],
+    "dependencies": {
+      "@theia/core": "/* @eval theiaVersion */",
+      // @if tree-editor
+      "@theia/editor": "/* @eval theiaVersion */",
+      "@theia/filesystem": "/* @eval theiaVersion */",
+      "@theia/workspace": "/* @eval theiaVersion */",
+      "@eclipse-emfcloud/theia-tree-editor": "next",
+      "uuid": "^3.3.2",
+      // @endif
+
+    },
+    "devDependencies": {
+      "rimraf": "latest",
+      "typescript": "latest",
+      // @if widget
+      "@testing-library/react": "^11.2.7",
+      "@types/jest": "^26.0.20",
+      "jest": "^26.6.3",
+      "ts-node": "^9.1.1",
+      "ts-jest": "^26.5.6",
+      // @endif
+    },
+    "scripts": {
+      "prepare": "yarn run clean && yarn run build",
+      "clean": "rimraf lib",
+      "build": "tsc",
+      "watch": "tsc -w",
+      // @if widget
+      "test": "jest --config configs/jest.config.ts"
+      // @endif
+    },
+    "theiaExtensions": [
+      {
+        "frontend": "lib/browser//* @eval name */-frontend-module",
+        // @if backend
+        "backend": "lib/node//* @eval name */-backend-module"
+        // @endif
+      }
+    ]
+  }

@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "lerna run prepare",
+    "rebuild:browser": "theia rebuild:browser",
+    "rebuild:electron": "theia rebuild:electron",
+    "start:browser": "yarn rebuild:browser && yarn --cwd browser-app start",
+    "start:electron": "yarn rebuild:electron && yarn --cwd electron-app start",
+    "watch": "lerna run --parallel watch",
+    // @if widget
+    "test": "cd /* @eval extensionPath */ && yarn test"
+    // @endif
+  },
+  "devDependencies": {
+    "lerna": "/* @eval lernaVersion */"
+  },
+  "workspaces": [
+    "/* @eval extensionPath */",
+    // @if browser
+    "browser-app",
+    // @endif
+    // @if electron
+    "electron-app",
+    // @endif
+  ]
+}

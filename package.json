@@ -1,0 +1,21 @@
+{
+    "devDependencies": {
+        "ava": "^4.3.0",
+        "vinyl": "2.2.1"
+    },
+    "scripts": {
+        "check-upgrade": "node check-upgrade.js",
+        "test": "ava \"__test__/**/*\"",
+        "test:watch": "ava \"__test__/**/*\" --watch",
+        "test:e2e": "ava --fail-fast --timeout 8m -v e2e-test.js",
+        "preversion": "npm test",
+        "version": "standard-changelog && git add CHANGELOG.md",
+        "postversion": "git push && git push --tags"
+    },
+    "ava": {
+        "files": [
+            "__test__/**/*",
+            "e2e-test.js"
+        ]
+    }
+}
