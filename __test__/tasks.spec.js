@@ -26,7 +26,7 @@ test('"after" task only prints summary in unattended mode', async t => {
     prompts,
     run,
     properties: {name: 'my-app'},
-    notDefaultFeatures: ['a', 'b-c'],
+    notDefaultFeatures: ['a', 'b-c','skip-install'],
     ansiColors
   }, {
     _isAvailable: isAvailable,
@@ -61,7 +61,7 @@ test('"after" task only prints summary in unattended mode and here mode', async 
     prompts,
     run,
     properties: {name: 'my-app'},
-    notDefaultFeatures: ['a', 'b-c'],
+    notDefaultFeatures: ['a', 'b-c','skip-install'],
     ansiColors
   }, {
     _isAvailable: isAvailable,
@@ -108,7 +108,7 @@ test('"after" task installs deps, and prints summary', async t => {
 
   t.is(printOut,
     '\nNext time, you can try to create similar project in silent mode:\n' +
-    ' npx makes dumberjs new-project-name -s a,b-c \n\n' +
+    ' npx makes Alexander-Taran/new-theia-extension new-project-name -s a,b-c \n\n' +
     'Get Started\n' +
     'cd my-app\n' +
     'yarn start\n\n'
@@ -139,7 +139,7 @@ test('"after" task installs deps, and prints summary in here mode', async t => {
     notDefaultFeatures: ['a', 'b-c'],
     ansiColors
   }, {
-    _isAvailable: () => false,
+    _isAvailable: () => true,
     _log(m) {
       printOut += m + '\n';
     }
@@ -147,7 +147,7 @@ test('"after" task installs deps, and prints summary in here mode', async t => {
 
   t.is(printOut,
     '\nNext time, you can try to create similar project in silent mode:\n' +
-    ' npx makes dumberjs new-project-name --here -s a,b-c \n\n' +
+    ' npx makes Alexander-Taran/new-theia-extension new-project-name --here -s a,b-c \n\n' +
     'Get Started\n' +
     'yarn start\n\n'
   );
