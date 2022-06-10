@@ -1,4 +1,3 @@
-
 module.exports = [
     {
         name: 'name',
@@ -15,18 +14,6 @@ module.exports = [
         ]
     },
     {
-        message: "fake question because features not specified in questions do not get passed through before->questions->transforms pipeline",
-        choices: [
-
-            { value: 'hello-world', title: 'Hello World' },
-            { value: 'widget', title: 'Widget (with unit tests)' },
-            { value: 'labelprovider', title: 'LabelProvider' },
-            { value: 'tree-editor', title: 'Tree Editor' },
-            { value: 'backend', title: 'Backend Communication' },
-            { value: 'empty', title: 'Empty' }
-        ]
-    },
-    {
         multiple: true,
         message: 'Create root project and apps? (default: both selected)',
         choices: [
@@ -35,10 +22,8 @@ module.exports = [
         ]
     },
     {
-
         name: 'author',
         message: "The extension's author"
-
     },
     {
 
@@ -47,18 +32,15 @@ module.exports = [
         default: '0.0.0'
     },
     {
-
         name: 'description',
         message: "The extension's description"
     },
     {
-
         name: 'theiaVersion',
         message: "The version of Theia to use",
         default: 'latest'
     },
     {
-
         name: 'lernaVersion',
         message: "The version of lerna to use",
         default: '2.4.0'
@@ -66,8 +48,8 @@ module.exports = [
     {
         message: 'Add vscode configuration files?',
         choices: [
-            { value: 'vscode', title: 'yes' },
-            { title: 'No.' }
+            { title: 'yes' },
+            { value: 'no-vscode', title: 'No.' }
         ]
     },
     {

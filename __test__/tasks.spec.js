@@ -8,6 +8,15 @@ ansiColors.bold = ansiColors;
 
 const isAvailable = bin => bin === 'yarn';
 
+
+test('camelToSnake handles camelCase', t => {
+  t.is(after.camelToSnake('camelCase'), 'camel-case')
+})
+test('camelToSnake handles camelCCase', t => {
+  t.is(after.camelToSnake('camelCCase'), 'camel-ccase')
+})
+
+
 test('"after" task only prints summary in unattended mode', async t => {
   const prompts = {
     select() {
@@ -25,8 +34,8 @@ test('"after" task only prints summary in unattended mode', async t => {
     here: false,
     prompts,
     run,
-    properties: {name: 'my-app'},
-    notDefaultFeatures: ['a', 'b-c','skip-install'],
+    properties: { name: 'my-app' },
+    notDefaultFeatures: ['a', 'b-c', 'skip-install'],
     ansiColors
   }, {
     _isAvailable: isAvailable,
@@ -60,8 +69,8 @@ test('"after" task only prints summary in unattended mode and here mode', async 
     here: true,
     prompts,
     run,
-    properties: {name: 'my-app'},
-    notDefaultFeatures: ['a', 'b-c','skip-install'],
+    properties: { name: 'my-app' },
+    notDefaultFeatures: ['a', 'b-c', 'skip-install'],
     ansiColors
   }, {
     _isAvailable: isAvailable,
@@ -96,7 +105,7 @@ test('"after" task installs deps, and prints summary', async t => {
     here: false,
     prompts,
     run,
-    properties: {name: 'my-app'},
+    properties: { name: 'my-app' },
     notDefaultFeatures: ['a', 'b-c'],
     ansiColors
   }, {
@@ -108,7 +117,7 @@ test('"after" task installs deps, and prints summary', async t => {
 
   t.is(printOut,
     '\nNext time, you can try to create similar project in silent mode:\n' +
-    ' npx makes Alexander-Taran/new-theia-extension new-project-name -s a,b-c \n\n' +
+    ' npx makes Alexander-Taran/new-theia-extension new-project-name  -s a,b-c \n\n' +
     'Get Started\n' +
     'cd my-app\n' +
     'yarn start\n\n'
@@ -135,7 +144,7 @@ test('"after" task installs deps, and prints summary in here mode', async t => {
     here: true,
     prompts,
     run,
-    properties: {name: 'my-app'},
+    properties: { name: 'my-app' },
     notDefaultFeatures: ['a', 'b-c'],
     ansiColors
   }, {
@@ -147,7 +156,7 @@ test('"after" task installs deps, and prints summary in here mode', async t => {
 
   t.is(printOut,
     '\nNext time, you can try to create similar project in silent mode:\n' +
-    ' npx makes Alexander-Taran/new-theia-extension new-project-name --here -s a,b-c \n\n' +
+    ' npx makes Alexander-Taran/new-theia-extension new-project-name --here  -s a,b-c \n\n' +
     'Get Started\n' +
     'yarn start\n\n'
   );

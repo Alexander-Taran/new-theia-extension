@@ -4,12 +4,11 @@
       "theia-extension"
     ],
     "version": "/* @eval version */",
-    // @if description
+ 
     "description": "/* @eval description */",
-    // @endif
-    // @if author
+
     "author": "/* @eval author */",
-    // @endif 
+
     // @if license
     "license": "/* @eval license */",
     // @endif

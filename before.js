@@ -29,8 +29,7 @@ module.exports = async function ({ unattended, prompts, predefinedProperties }) 
     })
 
     if (!explicit) {
-        predefinedProperties,
-        predefinedProperties
+
         return {
             silentQuestions: true,
             predefinedProperties,
